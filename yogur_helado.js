@@ -24,7 +24,7 @@ function obtenerSeleccionados(nombre) {
 }
 
 function guardarDatos(dato){
-    const dato_guardar = document.querySelector(f`input[name="${dato}"]:checked`).value;
+    const dato_guardar = document.querySelector(`input[name="${dato}"]:checked`).value;
 
     localStorage.setItem(dato, dato_guardar);
     
