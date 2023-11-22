@@ -4,13 +4,21 @@ function registrarUsuario() {
     const direccion = document.getElementById('direccion').value;
     const email = document.getElementById('email').value;
 
+    
 
-    // Realiza la lógica de registro (esto es solo un ejemplo)
-    if (nombre && contrasenia) {
-        // Puedes almacenar los datos en el servidor o en algún lugar seguro
-        // Aquí, simplemente mostraremos una alerta indicando que el usuario se registró
-        alert(`Usuario ${nombre} registrado con éxito`);
+    // Obtener datos del localStorage
+    const nombre_verificar = localStorage.getItem('nombre');
+    
+    // Verificando usuario
+    if (nombre_verificar) {
+        alert(`El nombre de usuario ${nombre} ya existe, por favor elija otro`);
     } else {
-        alert('Por favor, completa todos los campos');
+        // Almacenar datos
+        localStorage.setItem('nombre', nombre);
+        localStorage.setItem('contrasena', contrasenia);
+        localStorage.setItem('direccion', direccion);
+        localStorage.setItem('email', email);
+        alert('Se ha registrado con éxito');
     }
 }
+
