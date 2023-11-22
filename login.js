@@ -10,6 +10,6 @@ function login() {
         // Redirige o realiza otras acciones necesarias después del inicio de sesión
     } else {
         alert('Credenciales incorrectas. Inténtalo de nuevo.');
-        
+        window.location.href = 'login.html';
     }
 }

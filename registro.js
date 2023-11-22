@@ -11,6 +11,7 @@ function registrarUsuario() {
     // Verificando usuario
     if (nombre_verificar) {
         alert(`El nombre de usuario ${nombre} ya existe, por favor elija otro`);
+        window.location.href = 'registrar.html';
     } else {
         // Almacenar datos
         localStorage.setItem('nombre', nombre);
