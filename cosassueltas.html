@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Pizzeria</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name= "viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{url_for('static', filename='estilo.css')}}">
+        <header>
+            <h1 id="titulo0">Bienvenid@ a la Pizzeria Sin Hambre</h1>
+        </header>
+    </head>
+    <body>
+        <h2>Crea tu propia pizza</h2>
+        <p>Introduzca los detalles de su pizza</p>
+        <form method="post" action="/datos_pizza_per" >
+            <fieldset>
+                <legend>Masa</legend>
+                <p>¿Qué tipo de masa quiere?</p>
+                <input type="radio" name="masa" value="fina" >Fina<br>
+                <input type="radio" name="masa" value="normal" >Normal<br>
+                <input type="radio" name="masa" value="gruesa" >Gruesa<br>
+            </fieldset>
+            <fieldset>
+                <legend>Salsa</legend>
+                <p>¿Qué salsa quiere?</p>
+                <input type="radio" name="salsa" value="tomate" >Tomate<br>
+                <input type="radio" name="salsa" value="barbacoa" >Barbacoa<br>
+                <input type="radio" name="salsa" value="carbonara" >Carbonara<br>
+            </fieldset>
+            <fieldset>
+                <legend>Ingredientes</legend>
+                <p>¿Qué ingrediente quiere?</p>
+                <input type="checkbox" name="ingredientes_queso" value="queso" >Queso<br>
+                <input type="checkbox" name="ingredientes_jamon" value="jamon" >Jamón<br>
+                <input type="checkbox" name="ingredientes_bacon" value="bacon" >Bacon<br>
+                <input type="checkbox" name="ingredientes_champiñones" value="champiñones" >Champiñones<br>
+                <input type="checkbox" name="ingredientes_pollo" value="pollo" >Pollo<br>
+                <input type="checkbox" name="ingredientes_atun" value="atun" >Atún<br>
+                <input type="checkbox" name="ingredientes_piña" value="piña" >Piña<br>
+                <input type="checkbox" name="ingredientes_pimiento" value="pimiento" >Pimiento<br>
+                <input type="checkbox" name="ingredientes_tomate" value="tomate" >Tomate<br>
+                <input type="checkbox" name="ingredientes_cebolla" value="cebolla" >Cebolla<br>
+                <input type="checkbox" name="ingredientes_aceitunas" value="aceitunas" >Aceitunas<br>
+                <input type="checkbox" name="ingredientes_maiz" value="maiz" >Maíz<br>
+                <input type="checkbox" name="ingredientes_carne" value="carne" >Carne<br>
+                <input type="checkbox" name="ingredientes_salchicha" value="salchicha" >Salchicha<br>
+                <input type="checkbox" name="ingredientes_pepperoni" value="pepperoni" >Pepperoni<br>
+                <input type="checkbox" name="ingredientes_oregano" value="oregano" >Orégano<br>
+                <input type="checkbox" name="ingredientes_albahaca" value="albahaca" >Albahaca<br>
+                <input type="checkbox" name="ingredientes_rucula" value="rucula" >Rúcula<br>
+                <input type="checkbox" name="ingredientes_perejil" value="perejil" >Perejil<br>
+                
+            </fieldset>
+            <fieldset>
+                <legend>Cocción</legend>
+                <p>¿Qué técnica de cocción quiere?</p>
+                <input type="radio" name="coccion" value="horno_de_leña" >Horno de leña<br>
+                <input type="radio" name="coccion" value="horno_eléctrico" >Horno eléctrico<br>
+                <input type="radio" name="coccion" value="horno_de_gas" >Horno de gas<br>
+            </fieldset>
+            <fieldset>
+                <legend>Presentación</legend>
+                <p>¿Cómo quiere que se presente?</p>
+                <input type="radio" name="presentacion" value="caja_de_cartón" >Caja de cartón<br>
+                <input type="radio" name="presentacion" value="plato_de_barro" >Plato de barro<br>
+                <input type="radio" name="presentacion" value="plato_de_madera" >Plato de madera<br>
+                <input type="radio" name="presentacion" value="plato_de_papel" >Plato de papel<br>
+                <input type="radio" name="presentacion" value="plato_de_plástico" >Plato de plástico<br>
+                <input type="radio" name="presentacion" value="Sin presentación" >Sin presentación<br>
+
+            </fieldset>
+            <fieldset>
+                <legend>Bebida</legend>
+                <p>¿Qué maridaje quiere?</p>
+                <input type="radio" name="bebida" value='Sin bebida' >Sin bebida<br>
+                <input type="radio" name="bebida" value="agua" >Agua<br>
+                <input type="radio" name="bebida" value="sorpresa" >Sorpresa<br>
+                <input type="radio" name="bebida" value="vino_blanco" >Vino blanco<br>
+                <input type="radio" name="bebida" value="cerveza" >Cerveza<br>
+                <input type="radio" name="bebida" value="zumo" >Zumo<br>
+                <input type="radio" name="bebida" value="leche" >Leche<br>
+                <input type="radio" name="bebida" value="café" >Café<br>
+                <input type="radio" name="bebida" value="infusión" >Infusión<br>
+                <input type="radio" name="bebida" value="licor" >Licor<br>
+                <input type="radio" name="bebida" value="cava" >Cava<br>
+                <input type="radio" name="bebida" value="batido" >Batido<br>
+                <input type="radio" name="bebida" value="smoothie" >Smoothie<br>
+                <input type="radio" name="bebida" value="granizado" >Granizado<br>
+                <input type="radio" name="bebida" value="té" >Té<br>
+                <input type="radio" name="bebida" value="fanta" >Fanta<br>
+                <input type="radio" name="bebida" value="coca_cola" >Coca-Cola<br>
+                <input type="radio" name="bebida" value="pepsi" >Pepsi<br>
+            </fieldset>
+            <fieldset>
+                <legend>Postre</legend>
+                <p>¿Qué postre quiere?</p>
+                <input type="radio" name="postre" value='Sin postre' >Sin postre<br>
+                <input type="radio" name="postre" value="yogurt" >Yogurt<br>
+                <input type="radio" name="postre" value="helado" >Helado<br>
+                <input type="radio" name="postre" value="tarta" >Tarta<br>
+                <input type="radio" name="postre" value="fruta" >Fruta<br>
+                <input type="radio" name="postre" value="galletas" >Galletas<br>
+                <input type="radio" name="postre" value="postre_del_dia" >Postre del día<br>
+                <input type="radio" name="postre" value="flan" >Flan<br>
+                <input type="radio" name="postre" value="tarta_de_queso" >Tarta de queso<br>
+                <input type="radio" name="postre" value="tarta_de_chocolate" >Tarta de chocolate<br>
+            </fieldset>
+
+            <input type="submit" value="Enviar">  
+        </form>
+        {% if mensaje %}
+            <p>{{ mensaje }}</p>
+        {% endif %}
+        <div id="div4">
+            <h2 id="titulo1">¿Quienes somos?</h1>
+            <p id="parrafo1">Somos una pizzeria que se dedica a la venta de pizzas, con el fin de satisfacer a nuestros clientes, ofreciendo un servicio de calidad y con un buen sabor.</p>
+            <footer>
+                <p>¿Tienes alguna pregunta? Llame al 999 999 999 </p>
+            </footer>
+        </div>
+         
+    </body>
+</html>
