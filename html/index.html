@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Pizzeria</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name= "viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estilo.css">
+        <header>
+            <h1 id="titulo0">Bienvenid@ a la Pizzeria Sin Hambre</h1>
+            <nav>
+                <ul> 
+                    <li id = 'inicio_sesion'><a href="{{url_for('inicio_sesion')}}">Login</a></li>
+                    <li id = 'registro_usuario'><a href="{{url_for('registro_usuario')}}">Registrarse</a></li>
+
+                </ul>
+            </nav>
+        </header>
+        
+    </head>
+    <body>
+        <div id="paginas">
+            
+            <h1 id="titulo">Menus</h1>            
+            <nav id = 'div0'>
+                <ul> 
+                    <li id = 'Yh'><a href="{{url_for('cosassueltas')}}">Yogures helados</a></li>
+                    <li id = 'C'><a href="{{url_for('combos_general')}}">Combos</a></li>
+                    <li id ="CP"><a href="{{url_for('combos_per')}}">Combos personalizados</a></li>
+
+                </ul>
+            </nav>
+        </div>
+   
+            <div id="div4" class="division-completa">
+                <h2 id="titulo1">¿Quiénes somos?</h1>
+                <p id="parrafo1">
+                    Somos una heladería que ofrece una gran variedad de sabores de yogures helados, con una gran variedad de toppings y salsas. 
+                    Además, ofrecemos una gran variedad de pizzas, con una gran variedad de ingredientes y tamaños. 
+                    También ofrecemos combos yogures helados, con una gran variedad de combinaciones. 
+                </p>
+                <footer>
+                    <p>¿Tienes alguna pregunta? Llame al 999 999 999 </p>
+                </footer>
+            </div>
+        
+    </body>
+</html>
