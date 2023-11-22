@@ -6,6 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name= "viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="estilo.css">
+        <script src="yogur_helado.js"></script>
         <header>
             <h1 id="titulo0">Bienvenid@ a YogHell</h1>
         </header>
@@ -13,7 +14,7 @@
     <body>
         <h2>Crea tu Yogur</h2>
         <p>Personaliza tu delicioso yogur helado</p>
-        <form method="post" action="/datos_yogur" class="yogur-form">
+        <form method="post" class="yogur-form">
             <fieldset>
                 <legend>Base de Yogur</legend>
                 <p>Elige tu base de yogur</p>
@@ -61,7 +62,7 @@
                 <input type="checkbox" name="extra_chispas" value="chispas" >Chispas de Chocolate<br>
 
             </fieldset>
-            <input type="submit" value="Crear Yogur">
+            <input type="button" onclick="guardarDatos()">
         </form>
         <div id="div4">
             <h2 id="titulo1">¿Quiénes somos?</h1>
