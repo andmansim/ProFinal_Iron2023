@@ -15,15 +15,14 @@ function registrarUsuario() {
         window.location.href = 'registrar.html';
     } else {
         // Almacenar datos
-        const usuario = {
-            'nombre': nombre,
-            'contrasenia': contrasenia,
-            'direccion': direccion,
-            'email': email,
-            'telefono': telefono
-        }
+        usuario.nombre = nombre;
+        usuario.contrasenia = contrasenia;
+        usuario.direccion = direccion;
+        usuario.email = email;
+        usuario.telefono = telefono;
+
         const usuario_json = JSON.stringify(usuario);
-        localStorage.setItem('pedido', usuario_json);
+        localStorage.setItem('usuario', usuario_json);
         
         alert('Se ha registrado con éxito');
         window.location.href = 'index.html';
