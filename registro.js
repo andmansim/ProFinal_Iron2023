@@ -6,19 +6,25 @@ function registrarUsuario() {
     const telefono = document.getElementById('telefono').value;
 
     // Obtener datos del localStorage
-    const nombre_verificar = localStorage.getItem('nombre');
-
+    const pedido_local = localStorage.getItem('pedido');
+    const pedido = JSON.parse(pedido_local);
+    
     // Verificando usuario
-    if (nombre_verificar) {
+    if (pedido.nombre) {
         alert(`El nombre de usuario ${nombre} ya existe, por favor elija otro`);
         window.location.href = 'registrar.html';
     } else {
         // Almacenar datos
-        localStorage.setItem('nombre', nombre);
-        localStorage.setItem('contrasenia', contrasenia);
-        localStorage.setItem('direccion', direccion);
-        localStorage.setItem('email', email);
-        localStorage.setItem('telefono', telefono);
+        const usuario = {
+            'nombre': nombre,
+            'contrasenia': contrasenia,
+            'direccion': direccion,
+            'email': email,
+            'telefono': telefono
+        }
+        const usuario_json = JSON.stringify(usuario);
+        localStorage.setItem('pedido', usuario_json);
+        
         alert('Se ha registrado con éxito');
         window.location.href = 'index.html';
     }

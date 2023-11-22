@@ -6,11 +6,17 @@ function guardarDatos_yogurhelado() {
     const salsas = document.obtenerSeleccionados('salsa');
     const extras = document.obtenerSeleccionados('extra');
 
+    const pedido_local = localStorage.getItem('pedido');
+    const pedido = JSON.parse(pedido_local);
+
+    //Añadimos los datos al objeto
+    pedido.base = base;
+    pedido.toppings = toppings;
+    pedido.salsas = salsas;
+    pedido.extras = extras;
+
     // Almacenar en localStorage
-    localStorage.setItem('base', base);
-    localStorage.setItem('toppings', JSON.stringify(toppings)); // JSON.stringify convierte un objeto o valor de JavaScript en una cadena de texto JSON, porque el local storage solo almacena strings
-    localStorage.setItem('salsas', JSON.stringify(salsas));
-    localStorage.setItem('extras', JSON.stringify(extras));
+    localStorage.setItem('pedido', pedido);
 
     // Puedes redirigir a otra página o realizar otras acciones aquí
     alert('Su pedido se ha añadido con éxito');
@@ -26,7 +32,11 @@ function obtenerSeleccionados(nombre) {
 function guardarDatos(dato){
     const dato_guardar = document.querySelector(`input[name="${dato}"]:checked`).value;
 
-    localStorage.setItem(dato, dato_guardar);
+    const pedido_local = localStorage.getItem('pedido');
+    const pedido = JSON.parse(pedido_local);
+
+    pedido.dato = dato_guardar
+    localStorage.setItem('pedido', pedido );
     
     alert('Su pedido se ha añadido con éxito');
     window.location.href = 'index.html';
