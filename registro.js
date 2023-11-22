@@ -1,4 +1,5 @@
 function registrarUsuario() {
+    
     const nombre = document.getElementById('username').value;
     const contrasenia = document.getElementById('password').value;
     const direccion = document.getElementById('direccion').value;
