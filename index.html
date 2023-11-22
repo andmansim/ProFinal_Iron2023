@@ -8,13 +8,19 @@
         <link rel="stylesheet" href="estilo.css">
         <header>
             <h1 id="titulo0">Bienvenid@ a la YogHell</h1>
-            <nav>
-                <ul> 
-                    <li id = 'inicio-sesion'><a id = 'pant-inicio' href="login.html">Login</a></li>
-                    <li id = 'registro-usuario'><a id = 'pant-inicio' href="registrar.html">Registrarse</a></li>
-
-                </ul>
+            <nav id="parte-inicial">
+                <div >
+                    <li class="nav-item" id='inicio-sesion'><a id='pant-inicio' href="login.html">Login</a></li>
+                    <li class="nav-item" id='registro-usuario'><a id='pant-inicio' href="registrar.html">Registrarse</a></li>
+                </div>
+                <div id="right-nav">
+                    <li class="nav-item" id='carrito'><a href="carrito.html">
+                        <span id="carrito-icono">🛒</span> Carrito
+                        <span id="contador-carrito">0</span>
+                    </a></li>
+                </div>
             </nav>
+            
         </header>
         
     </head>
@@ -29,6 +35,7 @@
                     <li id ="CP"><a href="bollos.html">Bollos</a></li>
 
                 </ul>
+                
             </nav>
         </div>
    
