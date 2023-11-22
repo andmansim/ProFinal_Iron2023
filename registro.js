@@ -5,12 +5,12 @@ function registrarUsuario() {
     const email = document.getElementById('email').value;
     const telefono = document.getElementById('telefono').value;
 
-    // Obtener datos del localStorage
-    const pedido_local = localStorage.getItem('pedido');
-    const pedido = JSON.parse(pedido_local);
+    // Intenta coger el usuario, si no está lo crea
+    let usuario = JSON.parse(localStorage.getItem('usuario')) || {};
     
+
     // Verificando usuario
-    if (pedido.nombre) {
+    if (usuario.nombre) {
         alert(`El nombre de usuario ${nombre} ya existe, por favor elija otro`);
         window.location.href = 'registrar.html';
     } else {
