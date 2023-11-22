@@ -6,14 +6,15 @@ function guardarDatos_yogurhelado() {
     const salsas = document.obtenerSeleccionados('salsa');
     const extras = document.obtenerSeleccionados('extra');
 
-    const pedido_local = localStorage.getItem('pedido');
-    const pedido = JSON.parse(pedido_local);
+    pedido = {
+        'nombre': 'yogur helado',
+        'base': base,
+        'salsas': salsas, 
+        'extras': extras
+    }
 
-    //Añadimos los datos al objeto
-    pedido.base = base;
-    pedido.toppings = toppings;
-    pedido.salsas = salsas;
-    pedido.extras = extras;
+    let carrito = JSON.parse(localStorage.getItem('pedido')) || [];
+
 
     // Almacenar en localStorage
     localStorage.setItem('pedido', pedido);
