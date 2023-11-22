@@ -6,7 +6,7 @@ body::before { /*Es para que solo afecte al fondo de la app*/
     left:0;
     width: 100%;
     height: 100%;
-    opacity: 0.4;
+    opacity: 0.5;
     z-index: -1; /*pone la imagen en la capa -1*/
     font-size: 16px;
     background-image: url('fondoYogur.jpeg');
@@ -18,7 +18,7 @@ body::before { /*Es para que solo afecte al fondo de la app*/
 header{
     margin-bottom: 10px;
     padding: 10px;
-    background-color: rgba(57, 160, 103, 0.614);
+    background-color: rgb(134, 76, 220);
 }
 #titulo0{
     display: flex;
@@ -50,14 +50,15 @@ body nav ul li a {
     margin-bottom: 10px;
     margin-right: 10px;
     padding: 10px;
-    background-color: rgba(211, 231, 220, 0.614);
+    background-color: rgba(134, 76, 220, 0.495);
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 180%;
 }
-
+a{color:aliceblue}
+#inicio-sesion{color: aliceblue;}
 fieldset{
     padding: 10px;
     background-color: #f0f0f086;
