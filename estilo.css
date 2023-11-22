@@ -93,10 +93,10 @@ legend{
     background-color: rgba(160, 197, 231, 0.482);
 }
 
-.combo-container div:nth-child(even) {
-    background-color:rgba(77, 128, 176, 0.482);
-}
 
+
+
+/*Ajustar carrito y contador*/
 #carrito {
     float: right;
     margin-right: 20px;
