@@ -35,7 +35,7 @@ function guardarDatos_yogurhelado() {
 
     // Puedes redirigir a otra página o realizar otras acciones aquí
     alert('Su pedido se ha añadido con éxito');
-    window.location.href = '/index.html';
+    window.location.href = 'index.html';
 }
 
 
@@ -79,7 +79,53 @@ function guardarDatos(dato){
     localStorage.setItem('carrito', JSON.stringify(carrito));
     
     alert('Su pedido se ha añadido con éxito');
-    window.location.href = '/index.html';
+    window.location.href = 'index.html';
     
     //window.location.replace('/index.html');
+}
+
+function vaciarCarro(){
+    localStorage.removeItem('carrito');
+    alert('Su pedido se ha realizado con éxito');
+    window.localtion.href = 'index.html';
+}
+
+function cargarPedidos(){
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    
+    let tabla = document.getElementById('pedidosContainer'); //lugar de los pedidos
+
+    //Limpiamos lista para evitar duplicados
+    tabla.innerHTML = '';
+
+    carrito.forEach(function (pedido, index) {
+        let elemento = document.createElement('tr');
+
+        let contenidoElemento = '';
+        if (pedido.nombre == 'yogur helado'){
+            contenidoElemento = `
+            <td>${pedido.nombre}</td>
+            <td>${pedido.base}</td>
+            <td>${pedido.toppings}</td>
+            <td>${pedido.salsas}</td>
+            <td>${pedido.extras}</td>
+            <td>${pedido.precio}</td>
+            `;
+        } else if (pedido.nombre == 'Combo 1' || pedido.nombre == 'Combo 2' || pedido.nombre == 'Combo 3') {
+            contenidoElemento = `
+            <td>${pedido.nombre}</td>
+            <td>${pedido.topping}</td>
+            <td>${pedido.yogur}</td>
+            <td>${pedido.salsa}</td>
+            <td>${pedido.precio}</td>
+            `;
+        } else{
+            contenidoElemento = `
+            <td>${pedido.nombre}</td>
+            <td>${pedido.tipo}</td>
+            <td>${pedido.precio}</td>
+            `;
+        }
+
+    });
 }

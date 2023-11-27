@@ -6,62 +6,17 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name= "viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="estilo.css">
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 20px;
-            }
-
-            .pedido {
-                border: 1px solid #ddd;
-                padding: 10px;
-                margin-bottom: 10px;
-            }
-
-            h2 {
-                margin-bottom: 10px;
-            }
-        </style>
+        <script src="yogur_helado.js"></script>
     </head>
-    <body>
+    <body onload="cargarPedidos()">
 
         <h2>Listado de Pedidos</h2>
 
-        <div id="pedidosContainer">
+        <ul id="pedidosContainer">
             <!-- Los pedidos se mostrarán aquí dinámicamente -->
-        </div>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                mostrarPedidos();
-            });
-
-            function mostrarPedidos() {
-                // Obtener los pedidos del localStorage
-                const pedidos = JSON.parse(localStorage.getItem('carrito')) || [];
-
-                // Obtener el contenedor de pedidos en el HTML
-                const pedidosContainer = document.getElementById('pedidosContainer');
-
-                // Limpiar el contenido existente
-                pedidosContainer.innerHTML = '';
-
-                // Iterar sobre los pedidos y agregar cajitas individuales
-                pedidos.forEach(function (pedido, index) {
-                    const pedidoHTML = `
-                        <div class="pedido">
-                            <h3>Pedido ${index + 1}</h3>
-                            <p><strong>Nombre:</strong> ${pedido.nombre}</p>
-                            <p><strong>Base:</strong> ${pedido.base}</p>
-                            <p><strong>Toppings:</strong> ${pedido.topping.join(', ')}</p>
-                            <p><strong>Salsas:</strong> ${pedido.salsas.join(', ')}</p>
-                            <p><strong>Extras:</strong> ${pedido.extras.join(', ')}</p>
-                        </div>
-                    `;
-                    pedidosContainer.innerHTML += pedidoHTML;
-                });
-            }
-        </script>
+        </ul>
+        <p id="total">Total: 0.00€</p>
+        <button id="vaciarCarrito">Realizar pedido</button>
 
     </body>
 </html>
