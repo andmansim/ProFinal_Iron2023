@@ -12,12 +12,11 @@ function obtenerSeleccionados(nombre) {
 function guardarDatos_yogurhelado() {
     
     // Obtener valores seleccionados
-    alert('Puta madre');
     let base = document.querySelector('input[name="base"]:checked').value;
     let toppings = obtenerSeleccionados('topping_');
     let salsas = obtenerSeleccionados('salsa_');
     let extras = obtenerSeleccionados('extra_');
-    alert('Puta madre');
+
     let pedido = {
         'nombre': 'yogur helado',
         'topping': toppings,
@@ -84,10 +83,11 @@ function guardarDatos(dato){
     //window.location.replace('/index.html');
 }
 
+
 function vaciarCarro(){
     localStorage.removeItem('carrito');
     alert('Su pedido se ha realizado con éxito');
-    window.localtion.href = 'index.html';
+    window.location.href = 'index2.html';
 }
 
 function cargarPedidos(){
@@ -99,7 +99,7 @@ function cargarPedidos(){
     tabla.innerHTML = '';
 
     carrito.forEach(function (pedido, index) {
-        let elemento = document.createElement('li');
+        let elementoli = document.createElement('li');
 
         let contenidoElemento = '';
         if (pedido.nombre == 'yogur helado'){
@@ -126,9 +126,9 @@ function cargarPedidos(){
             Precio: ${pedido.precio}<br>
             `;
         }
-        elemento.innerHTML = contenidoElemento;
+        elementoli.innerHTML = contenidoElemento;
         //agregamos el elemento a la lista
-        tabla.appendChild(elemento);
+        tabla.appendChild(elementoli);
 
         let botonEliminar = document.createElement('button');
         botonEliminar.className = 'eliminar-botones';
@@ -138,10 +138,10 @@ function cargarPedidos(){
         });
 
         //Agregamos el boton eliminar
-        elemento.appendChild(botonEliminar);
+        elementoli.appendChild(botonEliminar);
 
         //Agregar el elemento <li> a la lista
-        tabla.appendChild(tabla);
+        tabla.appendChild(elementoli);
     });
     //Actualizar el total
     actualizarTotal();
@@ -153,5 +153,12 @@ function actualizarTotal(){
     carrito.forEach(function (pedido) {
         total += pedido.precio;
     });
-    document.getElementById('total').textContent = total;
+    document.getElementById('total').textContent = `Precio total: ${total}€`;
+}
+
+function eliminarPedido(index){
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    carrito.splice(index, 1);
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    cargarPedidos();
 }

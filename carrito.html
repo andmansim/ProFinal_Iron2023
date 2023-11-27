@@ -11,12 +11,14 @@
     <body onload="cargarPedidos()">
 
         <h2>Listado de Pedidos</h2>
-
-        <ul id="pedidosContainer">
-            <!-- Los pedidos se mostrarán aquí dinámicamente -->
-        </ul>
-        <p id="total">Total: 0.00€</p>
-        <button id="vaciarCarrito">Realizar pedido</button>
+        <nav class = 'cajaCarrito'>
+            <ul id="pedidosContainer">
+                <!-- Los pedidos se mostrarán aquí dinámicamente -->
+            </ul>
+        </nav>
+        
+        <p id="total">Precio total: 0.00€</p>
+        <button id="vaciarCarrito" onclick="vaciarCarro()">Realizar pedido</button>
 
     </body>
 </html>
