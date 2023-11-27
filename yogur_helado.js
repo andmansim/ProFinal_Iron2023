@@ -26,7 +26,7 @@ function guardarDatos_yogurhelado() {
             'extras': extras
         };
     
-        let carrito = JSON.parse(localStorage.getItem('pedido')) || [];
+        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
         carrito.push(pedido);
         // Almacenar en localStorage
@@ -44,32 +44,39 @@ function guardarDatos_yogurhelado() {
 
 function guardarDatos(dato){
     const dato_guardar = document.querySelector(`input[name="${dato}"]:checked`).value;
+    alert(dato_guardar);
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
     if (dato_guardar == 'Combo 1'){
-        let pedido = {
+    çpedido = {
             'nombre': dato_guardar, 
             'topping': 'Oreo',
             'yogur': 'Natural con frutas',
             'salsa': 'Fresa'};
     } else if (dato_guardar == 'Combo 2'){
-        let pedido = {
+        pedido = {
             'nombre': dato_guardar, 
             'topping': 'Chocolate blanco',
             'yogur': 'Vainilla con alemendras',
             'salsa': 'Caramelo'};
     } else if (dato_guardar == 'Combo 3'){
-        let pedido = {
+        pedido = {
             'nombre': dato_guardar, 
             'topping': 'Frutas mixtas',
             'yogur': 'Mango con coco',
             'salsa': 'Kiwi'};
     } else {
-        let pedido = {
+        alert('cosa')
+        pedido = {
             'nombre': dato_guardar, 
             'tipo': dato};
+            
     };
 
-    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    alert(JSON.stringify(pedido)); 
+    
     carrito.push(pedido);
+    
     localStorage.setItem('carrito', JSON.stringify(carrito));
     
     alert('Su pedido se ha añadido con éxito');
