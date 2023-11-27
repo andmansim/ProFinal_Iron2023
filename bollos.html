@@ -14,7 +14,7 @@
     <body>
         <h2>Acompaña tu yogur con estos deliciosos bollos</h2>
         <p>Selecione cuál desea</p>
-        <form method='post' action='datos_bollos' class='combo-general'>
+        <form  class='combo-general' onsubmit="return guardarDatos('bollo')">
             <fieldset>
                 <legend>Variedades de bollos</legend>
                 <p>¿Qué bollo quiere?</p>
@@ -89,10 +89,9 @@
                     </label>
                 </div>
 
-                
-
             </fieldset>
-            <button type="button" onclick="guardarDatos('bollo')">Añadir al carrito</button>
+            <button type="submit">Añadir al carrito</button>
+            
         </form>
         <div id="div4">
             <h2 id="titulo1">¿Quiénes somos?</h1>

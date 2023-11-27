@@ -14,7 +14,7 @@
     <body>
         <h2>Combos de Yogures Helados</h2>
         <p>Seleccione cuál desea</p>
-        <form method='post' action='datos_combo' class='combo-general'>
+        <form class='combo-general' onsubmit="return guardarDatos('combo')">
             <fieldset>
                 <legend>Combos</legend>
                 <div>
@@ -42,7 +42,7 @@
                     </p>
                 </div>
             </fieldset>
-            <button type="button" onclick = "guardarDatos('combo')">Añadir al carrito</button>
+            <button type="submit">Añadir al carrito</button>
         </form>
         <div id="div4">
             <h2 id="titulo1">¿Quiénes somos?</h1>
