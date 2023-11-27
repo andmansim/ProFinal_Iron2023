@@ -99,7 +99,7 @@ function cargarPedidos(){
     tabla.innerHTML = '';
 
     carrito.forEach(function (pedido, index) {
-        let elemento = document.createElement('tr');
+        let elemento = document.createElement('li');
 
         let contenidoElemento = '';
         if (pedido.nombre == 'yogur helado'){
@@ -126,6 +126,32 @@ function cargarPedidos(){
             Precio: ${pedido.precio}<br>
             `;
         }
+        elemento.innerHTML = contenidoElemento;
+        //agregamos el elemento a la lista
+        tabla.appendChild(elemento);
 
+        let botonEliminar = document.createElement('button');
+        botonEliminar.className = 'eliminar-botones';
+        botonEliminar.textContent = 'Eliminar';
+        botonEliminar.addEventListener('click', function () {
+            eliminarPedido(index);
+        });
+
+        //Agregamos el boton eliminar
+        elemento.appendChild(botonEliminar);
+
+        //Agregar el elemento <li> a la lista
+        tabla.appendChild(tabla);
     });
+    //Actualizar el total
+    actualizarTotal();
+}
+
+function actualizarTotal(){
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    let total = 0;
+    carrito.forEach(function (pedido) {
+        total += pedido.precio;
+    });
+    document.getElementById('total').textContent = total;
 }
