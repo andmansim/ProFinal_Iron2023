@@ -5,9 +5,7 @@ function login() {
     const usuario = JSON.parse(localStorage.getItem('usuario'));
     if (nombre === usuario.nombre && contrasenia === usuario.contrasenia) {
         alert('Inicio de sesión exitoso');
-        localStorage.setItem('usuarioAutenticado', 'true');
-        cambioIndex();
-        window.location.href = 'index.html';
+        window.location.href = 'index2.html';
         // Redirige o realiza otras acciones necesarias después del inicio de sesión
     } else {
         alert('Credenciales incorrectas. Inténtalo de nuevo.');
@@ -15,8 +13,6 @@ function login() {
 }
 
 function cerrarSesion(){
-    localStorage.setItem('usuarioAutenticado', 'false');
-    cambioIndex();
     alert('Se ha cerrado sesión con éxito')
     window.location.href = 'index.html';
 }
@@ -46,31 +42,8 @@ function registrarUsuario() {
         localStorage.setItem('usuario', JSON.stringify(usuario));
         
         alert('Se ha registrado con éxito');
-        window.location.href = 'index.html';
+        window.location.href = 'index2.html';
     }
-}
-
-function cambioIndex() {
-    // Verificar si el usuario está autenticado
-    const usuarioAutenticado = localStorage.getItem('usuarioAutenticado') === 'true';
-    // Mostrar u ocultar elementos según el estado del usuario
-    if (usuarioAutenticado) {
-        document.getElementById('bienvenidoMensaje').style.display = 'block';
-        document.getElementById('cerrar-sesion').style.display = 'block';
-        // Ocultar los enlaces de Login y Registrarse
-        document.getElementById('inicio-sesion').style.display = 'none';
-        document.getElementById('registro-usuario').style.display = 'none';
-    } else {
-        document.getElementById('bienvenidoMensaje').style.display = 'none';
-        document.getElementById('cerrar-sesion').style.display = 'none';
-        // Mostrar los enlaces de Login y Registrarse
-        document.getElementById('inicio-sesion').style.display = 'block';
-        document.getElementById('registro-usuario').style.display = 'block';
-
-    }
-    window.addEventListener('load', function() {
-        cambioIndex();
-    });
 }
 
 
