@@ -5,7 +5,7 @@ function guardarDatos_yogurhelado() {
     const toppings = document.obtenerSeleccionados('topping');
     const salsas = document.obtenerSeleccionados('salsa');
     const extras = document.obtenerSeleccionados('extra');
-
+    alert('Puta madre')
     pedido = {
         'nombre': 'yogur helado',
         'topping': toppings,
@@ -16,9 +16,9 @@ function guardarDatos_yogurhelado() {
 
     let carrito = JSON.parse(localStorage.getItem('pedido')) || [];
 
-
+    carrito.push(pedido);
     // Almacenar en localStorage
-    localStorage.setItem('pedido', pedido);
+    localStorage.setItem('carrito', carrito);
 
     // Puedes redirigir a otra página o realizar otras acciones aquí
     alert('Su pedido se ha añadido con éxito');
@@ -33,12 +33,10 @@ function obtenerSeleccionados(nombre) {
 
 function guardarDatos(dato){
     const dato_guardar = document.querySelector(`input[name="${dato}"]:checked`).value;
-
-    const pedido_local = localStorage.getItem('pedido');
-    const pedido = JSON.parse(pedido_local);
-
-    pedido.dato = dato_guardar
-    localStorage.setItem('pedido', pedido );
+    
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    carrito[0].dato = dato_guardar;
+    localStorage.setItem('carrito', carrito );
     
     alert('Su pedido se ha añadido con éxito');
     window.location.href = 'index.html';

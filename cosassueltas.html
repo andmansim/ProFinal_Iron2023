@@ -14,7 +14,7 @@
     <body>
         <h2>Crea tu Yogur</h2>
         <p>Personaliza tu delicioso yogur helado</p>
-        <form method="post" class="yogur-form">
+        <form class="yogur-form" onsubmit = "return guardarDatos_yogurhelado()">
             <fieldset>
                 <legend>Base de Yogur</legend>
                 <p>Elige tu base de yogur</p>
@@ -62,7 +62,7 @@
                 <input type="checkbox" name="extra_chispas" value="chispas" >Chispas de Chocolate<br>
 
             </fieldset>
-            <button type="button" onclick="guardarDatos_yogurhelado()">Añadir al carrito</button>
+            <button type="submit">Añadir al carrito</button>
         </form>
         <div id="div4">
             <h2 id="titulo1">¿Quiénes somos?</h1>
