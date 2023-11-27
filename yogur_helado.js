@@ -23,7 +23,8 @@ function guardarDatos_yogurhelado() {
         'topping': toppings,
         'base': base,
         'salsas': salsas, 
-        'extras': extras
+        'extras': extras,
+        'precio': 3.5
     };
 
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
@@ -48,23 +49,28 @@ function guardarDatos(dato){
             'nombre': dato_guardar, 
             'topping': 'Oreo',
             'yogur': 'Natural con frutas',
-            'salsa': 'Fresa'};
+            'salsa': 'Fresa', 
+            'precio': 2.5
+        };
     } else if (dato_guardar == 'Combo 2'){
         pedido = {
             'nombre': dato_guardar, 
             'topping': 'Chocolate blanco',
             'yogur': 'Vainilla con alemendras',
-            'salsa': 'Caramelo'};
+            'salsa': 'Caramelo', 
+            'precio': 2.5};
     } else if (dato_guardar == 'Combo 3'){
         pedido = {
             'nombre': dato_guardar, 
             'topping': 'Frutas mixtas',
             'yogur': 'Mango con coco',
-            'salsa': 'Kiwi'};
+            'salsa': 'Kiwi', 
+            'precio': 2.5};
     } else {
         pedido = {
             'nombre': dato_guardar, 
-            'tipo': dato};
+            'tipo': dato, 
+            'precio': 1.5};
             
     };
     
