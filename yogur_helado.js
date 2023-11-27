@@ -8,6 +8,7 @@ function guardarDatos_yogurhelado() {
 
     pedido = {
         'nombre': 'yogur helado',
+        'topping': toppings,
         'base': base,
         'salsas': salsas, 
         'extras': extras
