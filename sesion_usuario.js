@@ -68,6 +68,9 @@ function cambioIndex() {
         document.getElementById('registro-usuario').style.display = 'block';
 
     }
+    window.addEventListener('load', function() {
+        cambioIndex();
+    });
 }
 
 
