@@ -104,8 +104,7 @@ legend{
 
 
 
-
-/*Ajustar carrito y contador*/
+/*Ajustar carrito*/
 #carrito {
     float: right;
     margin-right: 20px;
@@ -119,16 +118,7 @@ legend{
     margin-right: 5px;
 }
 
-#contador-carrito {
-    background-color: red;
-    color: white;
-    border-radius: 50%;
-    padding: 5px 8px;
-    font-size: 14px;
-    position: absolute;
-    margin-left: -10px;
-    margin-top: -10px;
-}
+
 .nav-item {
     display: inline-block;
     margin-right: 20px;

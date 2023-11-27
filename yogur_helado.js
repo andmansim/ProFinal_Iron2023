@@ -1,6 +1,5 @@
-
+//Obtener valores seleccionados de los checkbox
 function obtenerSeleccionados(nombre) {
-    //obtener todos los checkbox seleccionados
     let ingredientes = [];
     const checkboxes = document.querySelectorAll(`input[name^="${nombre}"]:checked`);
     checkboxes.forEach(function (checkbox) {
@@ -34,8 +33,9 @@ function guardarDatos_yogurhelado() {
 
     // Puedes redirigir a otra página o realizar otras acciones aquí
     alert('Su pedido se ha añadido con éxito');
-    window.location.href = 'index.html';
-}
+    window.location.href = 'index2.html';
+    return false;
+} 
 
 
 
@@ -78,9 +78,9 @@ function guardarDatos(dato){
     localStorage.setItem('carrito', JSON.stringify(carrito));
     
     alert('Su pedido se ha añadido con éxito');
-    window.location.href = 'index.html';
+    window.location.href = 'index2.html';
     
-    //window.location.replace('/index.html');
+    return false;
 }
 
 
