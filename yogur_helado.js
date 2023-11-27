@@ -104,26 +104,26 @@ function cargarPedidos(){
         let contenidoElemento = '';
         if (pedido.nombre == 'yogur helado'){
             contenidoElemento = `
-            <td>${pedido.nombre}</td>
-            <td>${pedido.base}</td>
-            <td>${pedido.toppings}</td>
-            <td>${pedido.salsas}</td>
-            <td>${pedido.extras}</td>
-            <td>${pedido.precio}</td>
+            Nombre del pedido: ${pedido.nombre} <br>
+            Base: ${pedido.base} <br>
+            Topping: ${pedido.toppings}<br>
+            Salsas: ${pedido.salsas}<br>
+            Estrax: ${pedido.extras}<br>
+            Precio: ${pedido.precio}<br>
             `;
         } else if (pedido.nombre == 'Combo 1' || pedido.nombre == 'Combo 2' || pedido.nombre == 'Combo 3') {
             contenidoElemento = `
-            <td>${pedido.nombre}</td>
-            <td>${pedido.topping}</td>
-            <td>${pedido.yogur}</td>
-            <td>${pedido.salsa}</td>
-            <td>${pedido.precio}</td>
+            Nombre pedido: ${pedido.nombre}<br>
+            Toppings: ${pedido.topping}<br>
+            Base yogur: ${pedido.yogur}<br>
+            Salsa: ${pedido.salsa}<br>
+            Precio: ${pedido.precio}<br>
             `;
         } else{
             contenidoElemento = `
-            <td>${pedido.nombre}</td>
-            <td>${pedido.tipo}</td>
-            <td>${pedido.precio}</td>
+            Nombre pedido: ${pedido.nombre}<br>
+            Tipo: ${pedido.tipo}<br>
+            Precio: ${pedido.precio}<br>
             `;
         }
 
