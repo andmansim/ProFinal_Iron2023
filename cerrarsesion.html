@@ -13,20 +13,8 @@
         <h1>Bienvenido, Usuario</h1>
 
         <!-- Botón para cerrar sesión -->
-        <button id="cerrarSesionBtn">Cerrar Sesión</button>
+        <button id="cerrarSesionBtn" onclick="cerrarSesion()">Cerrar Sesión</button>
 
-        <script>
-            // Función para cerrar sesión
-            function cerrarSesion() {
-                // Actualizar el estado del usuario en el localStorage
-                localStorage.setItem('usuarioAutenticado', 'false');
-                // Redirigir a la página de inicio o a donde sea necesario
-                window.location.href = 'index.html';
-            }
-
-            // Agregar un evento de clic al botón de cerrar sesión
-            document.getElementById('cerrarSesionBtn').addEventListener('click', cerrarSesion);
-        </script>
 
     </body>
 </html>
