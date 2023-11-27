@@ -18,7 +18,7 @@ function guardarDatos_yogurhelado() {
 
     carrito.push(pedido);
     // Almacenar en localStorage
-    localStorage.setItem('carrito', carrito);
+    localStorage.setItem('carrito', JSON.stringify(carrito));
 
     // Puedes redirigir a otra página o realizar otras acciones aquí
     alert('Su pedido se ha añadido con éxito');
