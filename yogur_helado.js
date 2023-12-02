@@ -100,7 +100,6 @@ function cargarPedidos(){
 
     carrito.forEach(function (pedido, index) {
         let elementoli = document.createElement('li');
-        alert(pedido.topping);
         let contenidoElemento = '';
         if (pedido.nombre == 'yogur helado'){
             contenidoElemento = `
