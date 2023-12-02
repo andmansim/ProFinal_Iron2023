@@ -26,9 +26,9 @@ function registrarUsuario() {
 
     // Intenta coger el usuario, si no está lo crea
     let usuario = JSON.parse(localStorage.getItem('usuario')) || {};
-    
+
     // Verificando usuario
-    if (usuario.nombre) {
+    if (usuario.nombre === nombre) {
         alert(`El nombre de usuario ${nombre} ya existe, por favor elija otro`);
         window.location.href = 'registrar.html';
     } else {
