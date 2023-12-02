@@ -107,7 +107,7 @@ function cargarPedidos(){
             Base: ${pedido.base} <br>
             Topping: ${pedido.topping}<br>
             Salsas: ${pedido.salsas}<br>
-            Estrax: ${pedido.extras}<br>
+            Extras: ${pedido.extras}<br>
             Precio: ${pedido.precio}<br>
             `;
         } else if (pedido.nombre == 'Combo 1' || pedido.nombre == 'Combo 2' || pedido.nombre == 'Combo 3') {
